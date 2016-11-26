@@ -1,6 +1,7 @@
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -50,4 +51,35 @@ public class UnitTest {
         }
 
     }
+
+
+
+
+    @Test
+    public void longestPalindromeTest(){
+        longestPalindrome l=new longestPalindrome();
+        String test1="dabab";
+        String test2="babad";
+        String test3="";
+        String test4="a";
+        String test5="ab";
+        String test="abqiwyequwyqwiejnmnnbxzbcnbzxavbcbvaxzjjlzkjckjzxkljczkxasdasdasdasdsaasdasdasasadasasasjzxkjkasidpaosidaosidoaisidapsihsjkdhfjsdgfhgf";
+
+//        l.longest(test).stream().forEach(i->{
+//            System.out.println(i);
+//        });
+
+        System.out.println("results:--------");
+        l.longest(test).stream().max((o1, o2) -> o1.length()-o2.length()).ifPresent(System.out::println);
+
+
+        System.out.println("++++++++++++++++++");
+        System.out.println(l.longestPalindrome("abqiwyequwyqwiejnmnnbxzbcnbzxavbcbvaxzjjlzkjckjzxkljczkxasdasdasdasdsaasdasdasasadasasasjzxkjkasidpaosidaosidoaisidapsihsjkdhfjsdgfhgf"));
+
+    }
+
+
+
+
+
 }
