@@ -65,17 +65,20 @@ public class UnitTest {
         String test5="ab";
         String test="abqiwyequwyqwiejnmnnbxzbcnbzxavbcbvaxzjjlzkjckjzxkljczkxasdasdasdasdsaasdasdasasadasasasjzxkjkasidpaosidaosidoaisidapsihsjkdhfjsdgfhgf";
 
-//        l.longest(test).stream().forEach(i->{
-//            System.out.println(i);
-//        });
-
         System.out.println("results:--------");
         l.longest(test).stream().max((o1, o2) -> o1.length()-o2.length()).ifPresent(System.out::println);
-
 
         System.out.println("++++++++++++++++++");
         System.out.println(l.longestPalindrome("abqiwyequwyqwiejnmnnbxzbcnbzxavbcbvaxzjjlzkjckjzxkljczkxasdasdasdasdsaasdasdasasadasasasjzxkjkasidpaosidaosidoaisidapsihsjkdhfjsdgfhgf"));
 
+    }
+
+
+
+    @Test
+    public void reverseTest(){
+        reverseInt res=new reverseInt();
+        System.out.println(res.reverse(145));
     }
 
 
