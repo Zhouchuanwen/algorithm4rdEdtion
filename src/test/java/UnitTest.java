@@ -1,7 +1,6 @@
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -79,6 +78,15 @@ public class UnitTest {
     public void reverseTest(){
         reverseInt res=new reverseInt();
         System.out.println(res.reverse(145));
+    }
+
+
+
+    @Test
+    public void zigzagTest(){
+        ZigZagConversion zigZagConversion=new ZigZagConversion();
+        String s=zigZagConversion.convert("PAYPALISHIRING",3);
+        System.out.println(s);
     }
 
 
