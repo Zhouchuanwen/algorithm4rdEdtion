@@ -86,7 +86,8 @@ public class UnitTest {
     public void zigzagTest(){
         ZigZagConversion zigZagConversion=new ZigZagConversion();
         String s=zigZagConversion.convert("PAYPALISHIRING",3);
-        System.out.println(s);
+        String s1=zigZagConversion.convert2("PAYPALISHIRING",3);
+        System.out.println(s1);
     }
 
 

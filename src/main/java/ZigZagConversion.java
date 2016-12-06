@@ -45,4 +45,32 @@ public class ZigZagConversion {
         return result.toString();
     }
 
+
+
+    public String convert2(String s, int numRows) {
+        if (numRows == 1)
+            return s;
+        StringBuilder sb = new StringBuilder();
+        int magic = numRows * 2 - 2;
+        int initialDistance = magic;
+        for (int i = 0; i < numRows; i++) {
+            fill(sb, i, initialDistance, magic, s);
+            initialDistance = initialDistance - 2;
+        }
+        return sb.toString();
+    }
+
+    public void fill(StringBuilder sb, int start, int initialDistance, int magic, String s) {
+        while (start < s.length()) {
+            //第0行和最后一行的步长是固定的,所以initialDistance＝0，单独考虑.
+            if (initialDistance == 0)
+                initialDistance = magic;
+            //从start开始，步长为initialDistance.
+            sb.append(s.charAt(start));
+            start = start + initialDistance;
+            initialDistance = magic - initialDistance;
+        }
+    }
+
+
 }
