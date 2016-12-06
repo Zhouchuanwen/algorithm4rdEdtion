@@ -57,11 +57,7 @@ public class UnitTest {
     @Test
     public void longestPalindromeTest(){
         longestPalindrome l=new longestPalindrome();
-        String test1="dabab";
-        String test2="babad";
-        String test3="";
-        String test4="a";
-        String test5="ab";
+        String test1="dabab";String test2="babad";String test3="";String test4="a";String test5="ab";
         String test="abqiwyequwyqwiejnmnnbxzbcnbzxavbcbvaxzjjlzkjckjzxkljczkxasdasdasdasdsaasdasdasasadasasasjzxkjkasidpaosidaosidoaisidapsihsjkdhfjsdgfhgf";
 
         System.out.println("results:--------");
@@ -92,6 +88,10 @@ public class UnitTest {
 
     @Test
     public void ListNodeTest(){
+
+        /**
+         * 测试用例
+         */
         MergeTwoSortedList.ListNode[] listNode1=new MergeTwoSortedList.ListNode[10];
         for(int i=0;i<5;i++){
             listNode1[i]=new MergeTwoSortedList.ListNode(i*4);
@@ -117,6 +117,34 @@ public class UnitTest {
 
         System.out.println("归并排序后:");
         m.foreach(m.mergeTwoLists(listNode1[0],listNode2[0]));
+
+        System.out.println("＝＝＝＝＝＝＝＝＝＝＝＝＝＝>");
+
+        MergeTwoSortedList.ListNode[] listNode=new MergeTwoSortedList.ListNode[10];
+        for(int i=0;i<10;i++){
+            listNode[i]=new MergeTwoSortedList.ListNode(i*4);
+        }
+        listNode[0].next=listNode[1];
+        listNode[1].next=listNode[2];
+
+        listNode[3].next=listNode[4];
+        listNode[4].next=listNode[5];
+
+        listNode[6].next=listNode[7];
+        listNode[7].next=listNode[8];
+        listNode[8].next=listNode[9];
+
+        m.foreach(listNode[3]);
+        m.foreach(listNode[6]);
+        m.foreach(listNode[0]);
+
+        MergeTwoSortedList.ListNode[] mylistNode=new MergeTwoSortedList.ListNode[3];
+        mylistNode[0]=listNode[3];
+        mylistNode[1]=listNode[6];
+        mylistNode[2]=listNode[0];
+
+        System.out.println("多路递归归并排序后:");
+        m.foreach(m.mergekLists(mylistNode));
     }
 
 
