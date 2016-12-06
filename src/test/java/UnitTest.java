@@ -90,7 +90,34 @@ public class UnitTest {
         System.out.println(s1);
     }
 
+    @Test
+    public void ListNodeTest(){
+        MergeTwoSortedList.ListNode[] listNode1=new MergeTwoSortedList.ListNode[10];
+        for(int i=0;i<5;i++){
+            listNode1[i]=new MergeTwoSortedList.ListNode(i*4);
+        }
+        listNode1[0].next=listNode1[1];
+        listNode1[1].next=listNode1[2];
+        listNode1[2].next=listNode1[3];
+        listNode1[3].next=listNode1[4];
 
+        MergeTwoSortedList.ListNode[] listNode2=new MergeTwoSortedList.ListNode[10];
+        for(int i=0;i<6;i++){
+            listNode2[i]=new MergeTwoSortedList.ListNode(i*2);
+        }
+        listNode2[0].next=listNode2[1];
+        listNode2[1].next=listNode2[2];
+        listNode2[2].next=listNode2[3];
+        listNode2[3].next=listNode2[4];
+        listNode2[4].next=listNode2[5];
+
+        MergeTwoSortedList m=new MergeTwoSortedList();
+        m.foreach(listNode1[0]);
+        m.foreach(listNode2[0]);
+
+        System.out.println("归并排序后:");
+        m.foreach(m.mergeTwoLists(listNode1[0],listNode2[0]));
+    }
 
 
 
