@@ -4,7 +4,7 @@ package DataStructureImpl;
 
 /**
  * 基于堆的优先队列：数组实现
- * Created by alan on 16/12/5.
+ * Created by alan on 16/2/5.
  */
 public class MaxPQ<Key extends  Comparable<Key>>{
 
