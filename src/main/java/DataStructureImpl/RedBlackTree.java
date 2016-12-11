@@ -11,23 +11,23 @@ package DataStructureImpl;
  *
  * Created by alan on 16/4/5.
  */
-public class RedBlackTree<Key extends  Comparable<Key>>{
+public class RedBlackTree<Key extends  Comparable<Key>,Value>{
+
+    private Node root;
 
     private final static boolean RED=true;
     private final static boolean BLACK=false;
 
     public class Node{
         Key key;
-        int val;
+        Value val;
         Node left,right;
         int N;             //以该节点为根自节点的总数
         boolean color;
 
-        public Node(Key key, int val, Node left, Node right, int n, boolean color) {
+        public Node(Key key, Value val, int n, boolean color) {
             this.key = key;
             this.val = val;
-            this.left = left;
-            this.right = right;
             N = n;
             this.color = color;
         }
@@ -80,6 +80,50 @@ public class RedBlackTree<Key extends  Comparable<Key>>{
     public int size(Node node){
         if(node==null) return 0;
         return node.N;
+    }
+
+
+    /**
+     * 根节点总是黑色的
+     * @param h
+     */
+    public void flipColors(Node h){
+        h.color=RED;
+        h.left.color=BLACK;
+        h.right.color=BLACK;
+    }
+
+
+
+    public void put(Key key, Value value){
+        root=put(root,key,value);
+        root.color=BLACK;
+    }
+
+    /**
+     * 插入操作
+     * 从父节点开始找Key,找到则更新，没有则创建
+     * @param h
+     * @param key
+     * @param value
+     * @return
+     */
+    public Node put(Node h,Key key,Value value){
+        //用红链接与父节点相连
+        if(h==null)
+            return new Node(key,value,1,RED);
+
+        int cmp=key.compareTo(h.key);
+        if(cmp<0) h.left=put(h.left,key,value);
+        else if(cmp>0) h.right=put(h.right,key,value);
+        else h.val=value;
+
+        if(isRed(h.right) && !isRed(h.left)) h=rotateLeft(h);
+        else if(isRed(h.left)&&isRed(h.left.left)) h=rotateRight(h);
+        else flipColors(h);
+
+        h.N=1+size(h.left)+size(h.right);
+        return h;
     }
 
 
