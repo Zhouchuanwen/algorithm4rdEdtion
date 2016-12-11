@@ -7,7 +7,7 @@ package DataStructureImpl;
  * 因为之前的二查堆(树)在最坏的情况下(数据本身有序，二叉变为单枝)，遍历需要O(n)<虽然其它情况为O(lgN)>
  * 所以出出现下面的 2-3平衡树 => 由于2-3树在旋转的时候考虑情况太多,代码创建的东西太多反而会降低效率,所以出现了红黑树
  *
- * black-red-tree.
+ * black-red-tree. 保证最坏情况下的性能，支持更多的操作{排名，选择，排序，范围查找}
  *
  * Created by alan on 16/4/5.
  */
@@ -76,13 +76,6 @@ public class RedBlackTree<Key extends  Comparable<Key>,Value>{
         return  x;
     }
 
-
-    public int size(Node node){
-        if(node==null) return 0;
-        return node.N;
-    }
-
-
     /**
      * 根节点总是黑色的
      * @param h
@@ -91,6 +84,11 @@ public class RedBlackTree<Key extends  Comparable<Key>,Value>{
         h.color=RED;
         h.left.color=BLACK;
         h.right.color=BLACK;
+    }
+
+    public int size(Node node){
+        if(node==null) return 0;
+        return node.N;
     }
 
 
