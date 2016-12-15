@@ -1,5 +1,6 @@
 package DataStructureImpl;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +21,29 @@ public class DirectGraph {
             adj[v]=new ArrayList<>();
         }
     }
+
+
+    /**
+     * 提供从输入流读取一幅图
+     * @param in
+     */
+    public DirectGraph(InputStream in) {
+        try {
+            String res="";
+            BufferedReader bin=new BufferedReader(new InputStreamReader(in));
+            while ((res=bin.readLine())!=null){
+                String[] vertexs=res.split(" ");
+                if(vertexs.length==2){
+                    addEdge(Integer.parseInt(vertexs[0]),Integer.parseInt(vertexs[1]));
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
 
     public int V(){
         return V;
