@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 加权无向图
  * Created by alan on 16/12/15.
  */
 public class EdgeWeightGraph {
