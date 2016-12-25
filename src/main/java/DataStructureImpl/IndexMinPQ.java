@@ -54,6 +54,20 @@ public class IndexMinPQ<Key extends Comparable<Key>> implements Iterable<Integer
         swim(n);
     }
 
+    public void change(int i,Key key){
+        changeKey(i,key);
+    }
+
+    private void changeKey(int i, Key key) {
+        if(i<0||i>=maxN) throw new IndexOutOfBoundsException();
+        if(!contains(i)) throw new NoSuchElementException();
+
+        keys[i]=key;
+        swim(qp[i]);
+        sink(qp[i]);
+    }
+
+
     public int delMin() {
         if (n == 0) throw new NoSuchElementException("Priority queue underflow");
         int min = pq[1];
