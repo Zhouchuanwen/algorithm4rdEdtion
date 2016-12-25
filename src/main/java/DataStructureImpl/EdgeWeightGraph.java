@@ -60,6 +60,10 @@ public class EdgeWeightGraph {
         return E;
     }
 
+    public Iterable<Edge> adj(int v){
+        return adj[v];
+    }
+
     public void addEdge(Edge e){
         int v=e.either();
         int w=e.other(v);
