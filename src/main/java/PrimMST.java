@@ -3,6 +3,8 @@ import DataStructureImpl.EdgeWeightGraph;
 import DataStructureImpl.IndexMinPQ;
 
 /**
+ *
+ * 基于延时实现上去掉了优先队列的所有的失效边，而是只保存最短的失效边
  * Created by alan on 16/12/25.
  */
 public class PrimMST {
