@@ -22,7 +22,7 @@ public class RedBlackTree<Key extends  Comparable<Key>,Value>{
         Key key;
         Value val;
         Node left,right;
-        int N;             //以该节点为根自节点的总数
+        int N;             //以该节点为根子节点的总数
         boolean color;
 
         public Node(Key key, Value val, int n, boolean color) {

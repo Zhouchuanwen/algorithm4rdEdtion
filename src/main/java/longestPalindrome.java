@@ -31,7 +31,6 @@ public class longestPalindrome {
                 j++;
             }
         }
-        System.out.println("time1:"+(double) (System.nanoTime()-start)/1000000);
         return results;
     }
 
@@ -62,7 +61,6 @@ public class longestPalindrome {
                 max += 1;
             }
         }
-        System.out.println("time2:"+(double) (System.nanoTime()-start)/1000000);
         return s.substring(rs, re + 1);
     }
 

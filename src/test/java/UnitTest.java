@@ -1,6 +1,7 @@
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -10,11 +11,20 @@ public class UnitTest {
 
     @Test
     public void medianTest(){
-        int[] arr1= {1, 2, 3, 6};
-        int[] arr2= {};
-        Median median=new Median();
-        System.out.println(median.findMedianSortedArrays(arr1,arr2));
+//        int[] arr1= {1, 2, 3, 6};
+//        int[] arr2= {};
+//        Median median=new Median();
+//        System.out.println(median.findMedianSortedArrays(arr1,arr2));
 
+
+        HashSet<Integer> s=new HashSet<>();
+        s.add(1);
+        s.add(1);
+        s.add(1);
+        s.add(1);
+        s.stream().forEach(i->{
+            System.out.println(i);
+        });
     }
 
 
