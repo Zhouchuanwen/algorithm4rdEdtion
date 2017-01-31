@@ -25,6 +25,7 @@ public class QuickSort {
         return hi;
     }
 
+
     public static void sort(int[] array,int lo ,int hi){
         if(lo>=hi){
             return ;
