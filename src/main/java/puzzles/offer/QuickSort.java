@@ -5,34 +5,44 @@ package puzzles.offer;
  */
 public class QuickSort {
 
-    public static int partition(int []array,int lo,int hi){
-        int key=array[lo];
+    public static int partition(int[] arr,int low,int high){
+        int key=arr[low];
 
-        while(lo<hi){
+        while (low<high){
 
-            while(array[hi]>=key && hi>lo){
-                hi--;
+            while (arr[high]>=key && high>low){
+                high--;
             }
 
-            array[lo]=array[hi];
+            arr[low]=arr[high];
 
-            while(array[lo]<=key && hi>lo){
-                lo++;
+            while (arr[low]<=key && high>low){
+                low++;
             }
-            array[hi]=array[lo];
+            arr[high]=arr[low];
         }
-        array[hi]=key;
-        return hi;
-    }
+        arr[high]=key;
+        return high;
+   }
 
 
-    public static void sort(int[] array,int lo ,int hi){
-        if(lo>=hi){
-            return ;
-        }
-        int index=partition(array,lo,hi);
-        sort(array,lo,index-1);
-        sort(array,index+1,hi);
-    }
+   public static void sort(int[] arr,int low,int high){
+       if(low>=high){
+           return;
+       }
+       int index=partition(arr,low,high);
+       sort(arr,low,index);
+       sort(arr,index+1,high);
+   }
+
+   public static void main(String[] args){
+       int test[]={12,21,34,45,56,53,433,90,802,345,6567,782,2,8,45,9};
+
+       sort(test,0,test.length-1);
+
+       for(int i=0;i<test.length;i++){
+           System.out.println(test[i]+" ");
+       }
+   }
 
 }
