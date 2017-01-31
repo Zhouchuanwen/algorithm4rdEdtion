@@ -19,10 +19,8 @@ public class QuickSort {
             while(array[lo]<=key && hi>lo){
                 lo++;
             }
-
             array[hi]=array[lo];
         }
-
         array[hi]=key;
         return hi;
     }
