@@ -31,7 +31,6 @@ public class A {
         map2.put("13",1);
 
 
-
         map1.forEach((i,j)->{
             System.out.println(i+":"+j);
         });
