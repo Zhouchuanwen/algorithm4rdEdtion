@@ -3,5 +3,7 @@
 *.jar
 *.class
 *.swp
-/target/*
+/target
+*.md
+/target/
 
