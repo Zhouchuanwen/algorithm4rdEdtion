@@ -3,5 +3,5 @@
 *.jar
 *.class
 *.swp
-/target
+/target/*
 
