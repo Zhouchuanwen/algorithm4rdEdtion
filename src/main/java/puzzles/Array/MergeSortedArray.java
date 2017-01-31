@@ -1,7 +1,5 @@
 package puzzles.Array;
 
-import puzzles.Map.A;
-
 import java.util.Arrays;
 
 /**
