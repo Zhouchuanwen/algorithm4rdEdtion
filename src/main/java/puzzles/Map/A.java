@@ -12,8 +12,6 @@ import java.util.Map;
  */
 public class A {
 
-
-
     @Test
     public void test(){
         Map<String,Integer> map1=new HashMap<>();
@@ -43,5 +41,4 @@ public class A {
         });
 
     }
-
 }
