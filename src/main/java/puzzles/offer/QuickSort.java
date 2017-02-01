@@ -36,7 +36,7 @@ public class QuickSort {
    }
 
    public static void main(String[] args){
-       int test[]={12,21,34,45,56,53,433,90,802,345,6567,782,2,8,45,9};
+       int test[]={239034,12,21,34,45,56,53,433,90,802,345,6567,782,2,8,45,9,1};
 
        sort(test,0,test.length-1);
 
