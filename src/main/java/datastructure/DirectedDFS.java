@@ -28,7 +28,7 @@ public class DirectedDFS {
 
 
     /**
-     * 对当前的邻接点进行宽度优先搜索
+     * 对当前的邻接点进行深度优先搜索
      * @param G
      * @param v
      */

@@ -8,7 +8,7 @@ import org.junit.Test;
 public class BitCount {
 
     public static int add(int a,int b){
-        if(a>Integer.MAX_VALUE&&b>Integer.MAX_VALUE)
+        if(a>Integer.MAX_VALUE||b>Integer.MAX_VALUE)
             return Integer.MIN_VALUE;
 
         int ans = a;
