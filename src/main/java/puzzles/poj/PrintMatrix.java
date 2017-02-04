@@ -1,4 +1,4 @@
-package puzzles.offer;
+package puzzles.poj;
 
 import java.util.ArrayList;
 import java.util.List;

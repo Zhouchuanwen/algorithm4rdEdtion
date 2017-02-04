@@ -1,4 +1,4 @@
-package puzzles.offer;
+package puzzles.poj;
 
 /**
  * Created by alan on 17/1/18.

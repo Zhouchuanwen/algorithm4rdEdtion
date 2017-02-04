@@ -1,5 +1,5 @@
 import org.junit.Test;
-import puzzles.offer.PrintMatrix;
+import puzzles.poj.PrintMatrix;
 
 /**
  * Created by alan on 17/1/18.

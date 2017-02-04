@@ -1,6 +1,4 @@
-package puzzles.offer;
-
-import java.util.TreeMap;
+package puzzles.poj;
 
 /**
  * Created by alan on 17/1/19.

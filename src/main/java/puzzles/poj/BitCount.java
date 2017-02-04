@@ -1,4 +1,4 @@
-package puzzles.offer;
+package puzzles.poj;
 
 import org.junit.Test;
 
