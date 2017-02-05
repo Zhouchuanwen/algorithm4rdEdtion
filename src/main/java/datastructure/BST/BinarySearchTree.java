@@ -122,6 +122,82 @@ public class BinarySearchTree {
     }
 
 
+    /**
+     * 判断是否为同一棵树
+     */
+    public boolean isSameTree(TreeNode p,TreeNode q){
+        if(p==null && q==null)
+            return true;
+        if(p==null || q==null)
+            return false;
+        if(p.value!=q.value)
+            return false;
+        return isSameTree(p.left,q.left)&&isSameTree(p.right,q.right);
+    }
+
+
+    /**
+     * 求树的最大高度
+     * @param root
+     * @return
+     */
+    public int maxDepth(TreeNode root){
+        if(root==null){
+            return 0;
+        }else {
+            int right=maxDepth(root.right);
+            int left=maxDepth(root.left);
+            return 1+Math.max(right,left);
+        }
+    }
+
+
+    /**
+     * 平衡树:
+     *      它是一 棵空树或它的左右两个子树的高度差的绝对值不超过1
+     *      并且左右两个子树都是一棵平衡二叉树
+     *
+     *  最小二叉平衡树的节点的公式如下 F(n)=F(n-1)+F(n-2)+1 这个类似于一个递归的数列
+     */
+    public boolean isBalanced(TreeNode root){
+        if(root==null){
+            return true;
+        }
+        int depthOfLeft=getDepth(root.left,1);
+        int depthOfRight=getDepth(root.right,1);
+
+        if(Math.abs(depthOfLeft-depthOfRight)>1){
+            return false;
+        }else {
+            return isBalanced(root.left) && isBalanced(root.right);
+        }
+    }
+
+
+    public int getDepth(TreeNode tree,int currentDepth){
+        if(tree==null)
+            return currentDepth;
+        return Math.max(getDepth(tree.left,currentDepth+1),getDepth(tree.right,currentDepth+1));
+    }
+
+
+    /**
+     * 反转二叉树
+     */
+    public TreeNode invertTree(TreeNode root){
+        if(root==null){
+            return root;
+        }else {
+            TreeNode temp=root.left;
+            root.left=root.right;
+            root.right=temp;
+
+            invertTree(root.right);
+            invertTree(root.left);
+        }
+        return root;
+    }
+
 
     /**
      *                  13
