@@ -1,6 +1,8 @@
 package datastructure.BST;
 
 import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * https://segmentfault.com/a/1190000002685939
@@ -197,6 +199,28 @@ public class BinarySearchTree {
         }
         return root;
     }
+
+
+    /**
+     * 找到叶子节点,以及去掉叶子节点之后的叶子节点
+     */
+    public List<List<Integer>> findLeaves(TreeNode root){
+        List<List<Integer>> results=new ArrayList<>();
+        if(root!=null)
+            find(root,results);
+        return results;
+    }
+
+    public int find(TreeNode node,List<List<Integer>> result){
+        if(node==null)
+            return 0;
+        int depth=Math.max(find(node.right,result),find(node.left,result));
+        if(depth==result.size())
+            result.add(new ArrayList<>());
+        result.get(depth).add(node.value);
+        return depth+1;
+    }
+
 
 
     /**

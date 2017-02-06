@@ -8,7 +8,6 @@ public class RedBlackTreeTest {
 
     @Test
     public void redBlackTreeTest(){
-
     }
 
 }
