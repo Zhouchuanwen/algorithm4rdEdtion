@@ -22,7 +22,6 @@ public class IndexMinPQTest {
         while (!pq.isEmpty()) {
             pq.delMin();
         }
-
     }
 
 
