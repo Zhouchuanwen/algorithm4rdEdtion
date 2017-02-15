@@ -7,7 +7,7 @@ import java.util.*;
 /**
  * Created by alan on 17/2/14.
  */
-public class a {
+public class Node {
 
 
     /**
@@ -45,12 +45,27 @@ public class a {
 
     //批量设置节点
     public static void batchNext(List<ListNode> listNodes){
-        for(int i=0;i<listNodes.size()-1;i++){
+        for(int i=0;i<listNodes.size();i++){
             ListNode node1=listNodes.get(i);
-            ListNode node2=listNodes.get(i+1);
-            node1.next=node2;
+            if(i+1<listNodes.size()){
+                ListNode node2=listNodes.get(i+1);
+                node1.next=node2;
+            }else {
+                node1.next=null;
+            }
         }
     }
+
+
+
+
+
+
+
+
+
+
+
 
 
     @Test
@@ -61,8 +76,9 @@ public class a {
             list.add(node);
         }
         batchNext(list);
-        ListNode node=list.get(1);
-        System.out.println(node.next.value);
+        for (ListNode nodes:list){
+            System.out.println("current:"+nodes.value+" next:"+nodes.next);
+        }
     }
 
 

@@ -67,7 +67,7 @@ public class UnitTest {
     @Test
     public void longestPalindromeTest(){
         longestPalindrome l=new longestPalindrome();
-        String test1="dabab";String test2="babad";String test3="";String test4="a";String test5="ab";
+        String test1="dabab";String test2="babad";String test3="";String test4="Node";String test5="ab";
         String test="abqiwyequwyqwiejnmnnbxzbcnbzxavbcbvaxzjjlzkjckjzxkljczkxasdasdasdasdsaasdasdasasadasasasjzxkjkasidpaosidaosidoaisidapsihsjkdhfjsdgfhgf";
 
         System.out.println("results:--------");

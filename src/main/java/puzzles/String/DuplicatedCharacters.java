@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * http://www.java67.com/2014/03/how-to-find-duplicate-characters-in-String-Java-program.html
  *
- * You need to write a program in C, C++, Java or Python to print duplicate characters from a given String, for example if String is "Java" then program should print "a".
+ * You need to write Node program in C, C++, Java or Python to print duplicate characters from Node given String, for example if String is "Java" then program should print "Node".
  * Bonus points if your program is robust and handle different kinds of input
  * Created by alan on 17/1/17.
  */
