@@ -57,6 +57,44 @@ public class Node {
     }
 
 
+    //链表翻转迭代版本
+    public ListNode reverseIter(ListNode head){
+        ListNode newHead=null;
+        while (head!=null){
+            //保留下一个节点
+            ListNode next=head.next;
+            //下一个节点设置为newHead
+            head.next=newHead;
+            //head变为下一个节点
+            newHead=head;
+            //下一个节点变为head
+            head=next;
+        }
+        return newHead;
+    }
+
+    public ListNode reverse(ListNode head){
+        return reverseInt(head,null);
+    }
+
+    //链表翻转递归版本
+    public ListNode reverseInt(ListNode head,ListNode newHead){
+        if(head==null)
+            return newHead;
+
+        ListNode next=head.next;
+        head.next=newHead;
+        return reverseInt(next,head);
+    }
+
+
+
+
+    //判断两个链表是否相交
+
+
+
+    //两个链表是否有相同元素
 
 
 
@@ -64,6 +102,24 @@ public class Node {
 
 
 
+
+
+
+
+
+
+
+
+    //判断链表元素是否为回文
+
+
+    //https://leetcode.com/problems/remove-linked-list-elements/?tab=Description
+    //删除链表中指定元素
+    public ListNode removeElements(ListNode head,Integer val){
+        if(head==null) return null;
+        head.next=removeElements(head.next,val);
+        return head.value==val?head.next:head;
+    }
 
 
 
