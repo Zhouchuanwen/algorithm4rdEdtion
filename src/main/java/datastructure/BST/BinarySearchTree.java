@@ -47,16 +47,15 @@ public class BinarySearchTree {
         return null;
     }
 
-
     //广度优先
     public void bfs(){
         if (root==null) return;
-
         ArrayDeque<TreeNode> queue=new ArrayDeque<TreeNode>();
         queue.add(root);
         while (!queue.isEmpty()){
             TreeNode node=queue.remove();
             System.out.print(node.value+"    ");
+
             if(node.left!=null)
                 queue.add(node.left);
             if(node.right!=null)
@@ -65,11 +64,9 @@ public class BinarySearchTree {
 
     }
 
-
     //深度优先
     public void dfs(){
         if (root==null) return;
-
         ArrayDeque<TreeNode> queue=new ArrayDeque<TreeNode>();
         queue.push(root);
         while (!queue.isEmpty()){
@@ -121,6 +118,48 @@ public class BinarySearchTree {
                 }
             }
         }
+    }
+
+
+
+    /**删除节点*/
+    public TreeNode deletNode(TreeNode root,int key){
+        if(root==null)
+            return null;
+
+        if(key<root.value){
+            root.left=deletNode(root.left,key);
+        }else if(key>root.value){
+            root.right=deletNode(root.right,key);
+        }else {
+            if(root.left==null){
+                return root.right;
+            }else if(root.right==null){
+                return root.left;
+            }
+            //找到右子树最小的节点，设置为root, 然后删除之后返回的节点作为右子树
+            TreeNode minNode=findMin(root.right);
+            root.value=minNode.value;
+            root.right=deletNode(root.right,root.value);
+        }
+        return root;
+    }
+
+
+    /**根据BST 左子树比父节点小的特点*/
+    public TreeNode findMin(TreeNode node){
+        while (node.left!=null){
+            node=node.left;
+        }
+        return node;
+    }
+
+    /**根据BST 右子树比父节点大的特点*/
+    public TreeNode findMax(TreeNode node){
+        while (node.right!=null){
+            node=node.right;
+        }
+        return node;
     }
 
 
