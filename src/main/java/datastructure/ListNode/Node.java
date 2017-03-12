@@ -88,8 +88,6 @@ public class Node {
     }
 
 
-
-
     //判断两个链表是否相交
 
 
@@ -98,19 +96,8 @@ public class Node {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     //判断链表元素是否为回文
+
 
 
     //https://leetcode.com/problems/remove-linked-list-elements/?tab=Description
